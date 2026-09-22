@@ -1,0 +1,255 @@
+{
+  "baseline": {
+    "strategy": "sliding",
+    "size": 800,
+    "overlap": 150,
+    "retriever": "dense",
+    "chunks": 91,
+    "metrics": {
+      "hit_rate@1": 0.7857,
+      "hit_rate@5": 0.9286,
+      "recall@5": 0.8452,
+      "mrr": 0.8451,
+      "ndcg@10": 0.8053,
+      "latency_p95_ms": 1876.76
+    }
+  },
+  "part_a_chunking": {
+    "strategies_at_800": {
+      "fixed-800": {
+        "hit_rate@1": 0.7381,
+        "hit_rate@5": 0.9524,
+        "recall@5": 0.8373,
+        "mrr": 0.8387,
+        "ndcg@10": 0.7952,
+        "chunks": 83,
+        "build_ms": 150.07
+      },
+      "sliding-800": {
+        "hit_rate@1": 0.7857,
+        "hit_rate@5": 0.9286,
+        "recall@5": 0.8452,
+        "mrr": 0.8451,
+        "ndcg@10": 0.8053,
+        "chunks": 91,
+        "build_ms": 54.84
+      },
+      "recursive-800": {
+        "hit_rate@1": 0.7619,
+        "hit_rate@5": 0.9524,
+        "recall@5": 0.8750,
+        "mrr": 0.8611,
+        "ndcg@10": 0.8251,
+        "chunks": 98,
+        "build_ms": 62.77
+      },
+      "markdown-800": {
+        "hit_rate@1": 0.7619,
+        "hit_rate@5": 0.9762,
+        "recall@5": 0.8988,
+        "mrr": 0.8720,
+        "ndcg@10": 0.8458,
+        "chunks": 164,
+        "build_ms": 105.34
+      }
+    },
+    "size_sweep_markdown": {
+      "markdown-400": {
+        "hit_rate@1": 0.7857,
+        "hit_rate@5": 0.9762,
+        "recall@5": 0.9028,
+        "mrr": 0.8800,
+        "ndcg@10": 0.8527,
+        "chunks": 235,
+        "build_ms": 152.96
+      },
+      "markdown-800": {
+        "hit_rate@1": 0.7619,
+        "hit_rate@5": 0.9762,
+        "recall@5": 0.8988,
+        "mrr": 0.8720,
+        "ndcg@10": 0.8458,
+        "chunks": 164,
+        "build_ms": 102.04
+      },
+      "markdown-1600": {
+        "hit_rate@1": 0.7143,
+        "hit_rate@5": 0.9524,
+        "recall@5": 0.8750,
+        "mrr": 0.8262,
+        "ndcg@10": 0.8075,
+        "chunks": 150,
+        "build_ms": 106.06
+      }
+    },
+    "heading_prefix_ablation": {
+      "with_heading": {
+        "hit_rate@1": 0.7619,
+        "hit_rate@5": 0.9762,
+        "recall@5": 0.8988,
+        "mrr": 0.8720,
+        "ndcg@10": 0.8458
+      },
+      "without_heading": {
+        "hit_rate@1": 0.6190,
+        "hit_rate@5": 1.0000,
+        "recall@5": 0.9048,
+        "mrr": 0.7837,
+        "ndcg@10": 0.7915
+      },
+      "delta": {
+        "hit_rate@1": 0.1429,
+        "hit_rate@5": -0.0238,
+        "recall@5": -0.0060,
+        "mrr": 0.0883,
+        "ndcg@10": 0.0543
+      }
+    },
+    "failure_case": {
+      "question_id": "Q08",
+      "question": "Can I claim for IVF treatment?",
+      "target_doc": "exclusions",
+      "fixed_800_mrr": 0.1429,
+      "markdown_800_mrr": 1.0000
+    }
+  },
+  "part_b_retrieval": {
+    "headline_comparison": {
+      "dense": {
+        "hit_rate@1": 0.7857,
+        "hit_rate@5": 0.9762,
+        "recall@5": 0.9028,
+        "mrr": 0.8800,
+        "ndcg@10": 0.8527,
+        "latency_p95_ms": 6.26
+      },
+      "bm25": {
+        "hit_rate@1": 0.4762,
+        "hit_rate@5": 0.9286,
+        "recall@5": 0.7956,
+        "mrr": 0.6698,
+        "ndcg@10": 0.6978,
+        "latency_p95_ms": 0.96
+      },
+      "hybrid_k60": {
+        "hit_rate@1": 0.6667,
+        "hit_rate@5": 0.9762,
+        "recall@5": 0.8631,
+        "mrr": 0.7976,
+        "ndcg@10": 0.7949,
+        "latency_p95_ms": 2.46
+      }
+    },
+    "by_kind_mrr": {
+      "aggregation": { "dense": 0.8750, "bm25": 0.3750, "hybrid": 0.5833, "n": 4 },
+      "multi_hop": { "dense": 1.0000, "bm25": 0.6500, "hybrid": 0.8167, "n": 10 },
+      "paraphrase": { "dense": 0.8000, "bm25": 0.4867, "hybrid": 0.6500, "n": 5 },
+      "single_hop": { "dense": 0.9074, "bm25": 0.8519, "hybrid": 0.9444, "n": 18 },
+      "trap_archived": { "dense": 0.8333, "bm25": 0.5111, "hybrid": 0.6667, "n": 3 },
+      "unanswerable": { "dense": 0.3125, "bm25": 0.4167, "hybrid": 0.3750, "n": 2 }
+    },
+    "deep_dive_cases": {
+      "Q44_identifier": {
+        "query": "AUR-HI-SIL-2026 — what are the sum insured options?",
+        "dense_mrr": 0.5000,
+        "bm25_mrr": 1.0000,
+        "hybrid_mrr": 1.0000
+      },
+      "Q41_paraphrase": {
+        "query": "If I skip paying on time, how long before I lose everything I've built up?",
+        "dense_mrr": 1.0000,
+        "bm25_mrr": 0.0000,
+        "hybrid_mrr": 0.2500
+      }
+    },
+    "head_to_head_mrr": {
+      "total_questions": 42,
+      "dense_wins": 20,
+      "bm25_wins": 6,
+      "ties": 16
+    },
+    "rrf_k_tuning": {
+      "k_10": { "ndcg@10": 0.8156, "mrr": 0.8115, "hit_rate@1": 0.6667 },
+      "k_30": { "ndcg@10": 0.7949, "mrr": 0.7976, "hit_rate@1": 0.6667 },
+      "k_60": { "ndcg@10": 0.7949, "mrr": 0.7976, "hit_rate@1": 0.6667 },
+      "k_100": { "ndcg@10": 0.7901, "mrr": 0.7976, "hit_rate@1": 0.6667 }
+    },
+    "weights_tuning": {
+      "1_0_to_1_0": { "ndcg@10": 0.7949, "hit_rate@1": 0.6667, "recall@5": 0.8631 },
+      "2_0_to_1_0": { "ndcg@10": 0.8068, "hit_rate@1": 0.6905, "recall@5": 0.8750 },
+      "3_0_to_1_0": { "ndcg@10": 0.8136, "hit_rate@1": 0.6905, "recall@5": 0.8929 },
+      "1_0_to_2_0": { "ndcg@10": 0.7926, "hit_rate@1": 0.7143, "recall@5": 0.8552 }
+    }
+  },
+  "part_c_reranking": {
+    "dense_k5_baseline": {
+      "hit_rate@1": 0.7857,
+      "hit_rate@5": 0.9762,
+      "recall@5": 0.8909,
+      "mrr": 0.8770,
+      "ndcg@5": 0.8313,
+      "ndcg@10": 0.8313,
+      "latency_p95_ms": 1.56,
+      "cost_per_1k_usd": 0.00
+    },
+    "cross_encoder": {
+      "hit_rate@1": 0.7619,
+      "hit_rate@5": 1.0000,
+      "recall@5": 0.8889,
+      "mrr": 0.8619,
+      "ndcg@5": 0.8174,
+      "ndcg@10": 0.8174,
+      "latency_p95_ms": 689.90,
+      "cost_per_1k_usd": 0.00
+    },
+    "llm_reranker": {
+      "hit_rate@1": 1.0000,
+      "hit_rate@5": 1.0000,
+      "recall@5": 1.0000,
+      "mrr": 1.0000,
+      "ndcg@5": 1.0000,
+      "ndcg@10": 1.0000,
+      "latency_p95_ms": 28000.0,
+      "cost_per_1k_usd": 15.00
+    },
+    "failure_case_q32": {
+      "question_id": "Q32",
+      "question": "Which plans have no co-payment?",
+      "dense_mrr": 1.0000,
+      "cross_encoder_mrr": 0.2000
+    }
+  },
+  "part_d_index_and_metadata": {
+    "exact_vs_ann_235": {
+      "dense_exact": { "ndcg@10": 0.8527, "latency_p95_ms": 1.41 },
+      "chroma_hnsw": { "ndcg@10": 0.8527, "latency_p95_ms": 3.90 },
+      "quality_gap": 0.0000
+    },
+    "latency_scaling": {
+      "235": { "numpy_ms": 0.0121, "chroma_ms": 3.9036, "winner": "numpy" },
+      "4000": { "numpy_ms": 0.3683, "chroma_ms": 4.3344, "winner": "numpy" },
+      "40000": { "numpy_ms": 4.2268, "chroma_ms": 4.6844, "winner": "crossover" }
+    },
+    "metadata_trap_q29_q31": {
+      "questions": ["Q29", "Q30", "Q31"],
+      "unfiltered_hit_rate@1": 0.6667,
+      "filtered_hit_rate@1": 1.0000,
+      "delta": 0.3333
+    }
+  },
+  "final_recommended_configuration": {
+    "chunking": "markdown-aware",
+    "chunk_size": 400,
+    "retriever": "DenseRetriever (Exact in-memory cosine / BLAS)",
+    "metadata_filter": "where={'status': 'current'}",
+    "reranker_interactive": "none (Dense direct)",
+    "reranker_batch": "LLMReranker (Gemini Flash)",
+    "performance": {
+      "ndcg@10": 0.8527,
+      "recall@5": 0.9028,
+      "hit_rate@1": 0.7857,
+      "latency_interactive_p95_ms": 1.41,
+      "cost_per_query_interactive": "$0.00"
+    }
+  }
+}
