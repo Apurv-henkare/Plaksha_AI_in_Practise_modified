@@ -30,7 +30,7 @@ In Lab 4, we built and calibrated the **Answer Generation** stage of the Aurora 
 
 ---
 
-## 1. The Generation Prompt (`ANSWER_SYSTEM`)
+## 1. Your ANSWER_SYSTEM, with the Differences from the Reference Noted
 
 Our prompt in `labs/lab4/rag.py` sets the mandatory ground rules for the AI:
 
@@ -63,7 +63,7 @@ Rules, in priority order:
 
 ---
 
-## 2. Enforcing Citations in Python Code (Part B)
+## 2. Citation Validity, and What You Do on Failure
 
 A prompt is only a request—an LLM can still make mistakes. To guarantee safety, **we verify every citation in Python code before returning the answer**.
 
@@ -101,7 +101,7 @@ A prompt is only a request—an LLM can still make mistakes. To guarantee safety
 
 ---
 
-## 3. Refusal in Both Directions at Two Strictness Settings (Part C)
+## 3. The Refusal Precision/Recall Table at Two Strictness Settings, with Your Product Recommendation
 
 A system that refuses *everything* gets 100% refusal recall but is completely useless. To demonstrate the trade-off, we evaluated the system across **two strictness settings**:
 
@@ -128,7 +128,7 @@ A system that refuses *everything* gets 100% refusal recall but is completely us
 
 ---
 
-## 4. Calibrating Our AI Judges (Part D)
+## 4. Judge κ for Both Rubrics, and How You Fixed the Rubric if You Had To
 
 ### Our Two Single-Criterion Judges:
 1. **Faithfulness Judge (0 or 1):** Did the AI stick strictly to the retrieved passages? Valid refusals and partial refusals count as 100% faithful (1).
@@ -148,7 +148,7 @@ With $\kappa = 1.00$ (far exceeding the $\ge 0.40$ requirement), our judges demo
 
 ---
 
-## 5. The Gold-Context Decomposition (The "Blame" Test)
+## 5. The E2 Decomposition Table with A, B, and the Two Attributed Losses
 
 When an answer is wrong, who is to blame—the search engine or the AI writer?  
 We tested all 40 answerable questions twice:
@@ -175,9 +175,21 @@ We tested all 40 answerable questions twice:
 
 ---
 
-## 6. The 10-Case Failure Backlog for Lab 5 (Part E3)
+## 6. The E3 Failure-Mode Tally
 
-We analyzed the imperfect answers in `reports/lab4.json` to identify what failed:
+We analyzed the imperfect answers in `reports/lab4.json` across all failure modes:
+
+### Failure-Mode Summary Tally
+
+| Failure Mode / Category | Count | Impacted Query IDs | Primary Bottleneck |
+|---|:---:|---|---|
+| **Generation Omission & Brevity** | 4 | Q04, Q05, Q10, Q34 | Dropped rider, secondary deadline, or exclusion clause |
+| **Complex Constraints & Boundaries** | 2 | Q20, Q23 | Missed age-triggered copay or exact dioptre boundary |
+| **Multi-Hop / Aggregation Synthesis** | 2 | Q19, Q35 | Synthesis across cross-cutting riders or plan exemptions |
+| **Retrieval Misses** | 2 | Q11, Q32 | In-memory retriever missed multi-document comparison table |
+| **Total Imperfect Cases** | **10** | — | — |
+
+### Detailed 10-Case Failure Breakdown
 
 | Query ID | Topic | Score | Failure Category | Why It Failed |
 |---|---|:---:|---|---|

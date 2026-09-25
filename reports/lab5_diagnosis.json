@@ -1,0 +1,128 @@
+[
+  {
+    "id": "Q04",
+    "kind": "single_hop",
+    "mode": 6,
+    "mode_name": "generation",
+    "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)",
+    "question": "What is the waiting period for pre-existing diseases?",
+    "answer": "The waiting period for pre-existing diseases is 36 months on standard retail plans, unless explicitly waived in writing by Aurora [3][5]. However, under the Aurora Senior Care plan for ages 60 and above, the waiting period for pre-existing diseases is 24 months [5]."
+  },
+  {
+    "id": "Q05",
+    "kind": "single_hop",
+    "mode": 6,
+    "mode_name": "generation",
+    "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)",
+    "question": "How long is the grace period for an annual policy?",
+    "answer": "The grace period for an annual policy is 30 days from the renewal due date [1][4][5]."
+  },
+  {
+    "id": "Q10",
+    "kind": "single_hop",
+    "mode": 6,
+    "mode_name": "generation",
+    "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)",
+    "question": "Who can I escalate to if Aurora rejects my claim and their internal response is unsatisfactory?",
+    "answer": "If you are not satisfied with the Stage 1 outcome, you can escalate the issue internally to Aurora's Grievance Redressal Officer [2]. If Aurora's final internal response is unsatisfactory, or if they have not responded within 30 days of your original complaint, you may approach the Insurance Ombudsm"
+  },
+  {
+    "id": "Q11",
+    "kind": "single_hop",
+    "mode": 6,
+    "mode_name": "generation",
+    "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)",
+    "question": "How much ambulance cover is there?",
+    "answer": "Across all plans, road ambulance is covered up to ₹5,000 per hospitalisation [1]. Additionally, under the Aurora Gold plan, air ambulance cover is available up to ₹2,50,000 per policy year within India, subject to prior authorisation [5]."
+  },
+  {
+    "id": "Q19",
+    "kind": "multi_hop",
+    "mode": 6,
+    "mode_name": "generation",
+    "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)",
+    "question": "I am on Silver with a 5 lakh sum insured and took a room at Rs 15,000 per day. Will everything be paid?",
+    "answer": "No, everything will not be paid [1][5]. Under the Silver plan with a ₹5,00,000 sum insured, the room-rent limit is 2% of the sum insured, or ₹10,000 per day [1][2]. Because a room tariff of ₹15,000 per day exceeds this limit, a proportionate deduction with an eligibility ratio of 0.667 applies, redu"
+  },
+  {
+    "id": "Q20",
+    "kind": "multi_hop",
+    "mode": 6,
+    "mode_name": "generation",
+    "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)",
+    "question": "My mother is 63 and I want to add her to my policy. Which plans allow it and what changes?",
+    "answer": "Dependent parents can be added under the Silver (at an extra premium), Gold, and Platinum plans, but they are not permitted under the Bronze plan [1]. Adding your mother will affect the policy cost because the premium is determined by the age of the eldest member covered, which often costs more than"
+  },
+  {
+    "id": "Q21",
+    "kind": "multi_hop",
+    "mode": 6,
+    "mode_name": "generation",
+    "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)",
+    "question": "I am switching from another insurer. Will my 3 years of waiting period carry over if I increase my sum insured?",
+    "answer": "Credit for the waiting periods you have already served will carry over, but only up to the sum insured (including accrued no-claim bonus) of your previous policy [1][2]. Any incremental increase in the sum insured will be subject to fresh waiting periods on the excess amount [1][2]."
+  },
+  {
+    "id": "Q23",
+    "kind": "multi_hop",
+    "mode": 6,
+    "mode_name": "generation",
+    "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 0/2 (generation omission/reasoning)",
+    "question": "Can I get an out-patient physiotherapy session reimbursed on Bronze?",
+    "answer": "The out-patient benefit (OPD rider) is not available on the Bronze plan [1]. The provided sources do not contain specific information about physiotherapy sessions, so I don't have enough information in the provided sources to answer that."
+  },
+  {
+    "id": "Q26",
+    "kind": "multi_hop",
+    "mode": 6,
+    "mode_name": "generation",
+    "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)",
+    "question": "Is knee replacement covered immediately after I buy the policy?",
+    "answer": "No, knee joint replacement is not covered immediately unless it is required following an accident, which has no waiting period and is covered from day one [1][2][5]. For non-accidental cases, knee joint replacement is subject to a 24-month waiting period [1][5]."
+  },
+  {
+    "id": "Q29",
+    "kind": "trap_archived",
+    "mode": 6,
+    "mode_name": "generation",
+    "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)",
+    "question": "How many days do I have to respond to a query Aurora raises on my claim?",
+    "answer": "The timeline depends on the type of claim:\n\n* For reimbursement claims under general claim timelines, you have **45 days** from the date of the query to respond, after which Aurora closes the claim [2][5].\n* For motor insurance claims, the deadline to respond to an Aurora query is **30 days** from t"
+  },
+  {
+    "id": "Q32",
+    "kind": "aggregation",
+    "mode": 6,
+    "mode_name": "generation",
+    "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)",
+    "question": "Which plans have no co-payment?",
+    "answer": "Aurora Gold has no co-payment (nil) at all ages [1]. Additionally, Aurora Silver has no co-payment for claims where the eldest insured member is below age 60 [2]."
+  },
+  {
+    "id": "Q35",
+    "kind": "aggregation",
+    "mode": 4,
+    "mode_name": "ranking",
+    "evidence": "gold doc(s) ['outpatient-and-wellness'] in top 30, but ranked outside top 5 (ranking error)",
+    "question": "List everything that is excluded relating to dental treatment.",
+    "answer": "Dental treatment and oral surgery are permanently excluded, unless necessitated by an accidental injury requiring hospitalisation [2][3]. Additionally, out-patient dental work is not covered under any plan [1]."
+  },
+  {
+    "id": "Q37",
+    "kind": "unanswerable",
+    "mode": 4,
+    "mode_name": "ranking",
+    "evidence": "gold doc(s) ['exclusions', 'plans-overview'] in top 30, but ranked outside top 5 (ranking error)",
+    "question": "Does Aurora cover treatment in Singapore, and up to what limit?",
+    "answer": "I don't have enough information in the provided sources to answer that."
+  },
+  {
+    "id": "Q44",
+    "kind": "paraphrase",
+    "mode": 6,
+    "mode_name": "generation",
+    "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 0/2 (generation omission/reasoning)",
+    "question": "AUR-HI-SIL-2026 — what are the sum insured options?",
+    "answer": "Product UIN AUR-HI-SIL-2026 corresponds to Aurora Silver [2]. However, I don't have enough information in the provided sources to answer that regarding its sum insured options."
+  }
+]
