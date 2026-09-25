@@ -5,12 +5,12 @@
 ## 1. The Big Picture (In Plain English)
 
 Think of building an AI question-answering system like running a two-person team in an office:
-- **Person 1 (The Searcher / Librarian):** Their only job is to run to the filing cabinet, find the 5 best policy pages, and put them on the desk.
-- **Person 2 (The Writer / Advisor):** Their job is to read those 5 pages and write a clear, 2-sentence answer for the customer.
+- **Person 1 (The Searcher / Librarian):** This is our **Search Engine / Retriever** (`DenseRetriever`). Its only job is to search the filing cabinet, find the 5 best policy pages, and put them on the desk.
+- **Person 2 (The Writer / Advisor):** This is the **AI Language Model (LLM / Generator, specifically `gemini-2.5-flash`)** — **it is NOT the user**. Its job is to read those 5 retrieved pages and write a clear, 2-sentence answer for the customer.
 
-In **Lab 3**, we spent all our time training **Person 1 (The Searcher)**. We tested different ways to cut documents and proved that cutting them into **400-character pieces with markdown headings (`markdown-400`)** using **Dense search** found the right pages 90% of the time.
+In **Lab 3**, we spent all our time training **Person 1 (The Searcher / Retriever)**. We tested different ways to cut documents and proved that cutting them into **400-character pieces with markdown headings (`markdown-400`)** using **Dense search** found the right pages 90% of the time.
 
-In **Lab 4**, our job is to train **Person 2 (The Writer)**. But before we write any answers, we must give Person 2 our best search engine from Lab 3.
+In **Lab 4**, our job is to instruct and guide **Person 2 (The Writer / LLM)**. But before we write any answers, we must give Person 2 our best search engine from Lab 3.
 
 ---
 
