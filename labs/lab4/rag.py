@@ -32,10 +32,11 @@ Rules, in priority order:
      "{REFUSAL}"
    - If only PART of the question can be answered from the sources (e.g. coverage exists but limits are unstated), state the supported facts with citations, and state:
      "{REFUSAL}" regarding the missing details. Do not guess or invent unmentioned limits.
+   - However, if the sources contain the relevant facts, plan details, or product codes, extract and answer with the supported facts rather than refusing.
 3. Citations: Every factual sentence or claim must end with a citation to the specific source(s) supporting it, formatted as [1] or [2][5].
 4. Valid Indices: Never cite a source number that was not provided in the context (only cite numbers between 1 and the total number of sources).
 5. Contradictions: If different sources contradict or disagree with each other, explicitly describe the discrepancy and cite all conflicting sources.
-6. Conciseness: Be concise, direct, and factual. Keep answers to two or three sentences unless the question explicitly requires more detail.
+6. Completeness & Structure: Be comprehensive, direct, and factual. Always explicitly include all relevant conditions, exceptions, optional riders, age restrictions, and specific limits found in the sources. Use clear bullet points if multiple conditions or plan options apply, rather than omitting details for brevity.
 {UNTRUSTED_SYSTEM_CLAUSE}
 """
 

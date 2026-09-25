@@ -1,0 +1,189 @@
+{
+  "scorecard": {
+    "correctness": {
+      "v1": 0.8,
+      "v2": 0.8,
+      "delta": 0.0
+    },
+    "faithfulness": {
+      "v1": 0.978,
+      "v2": 0.978,
+      "delta": 0.0
+    },
+    "citation_validity": {
+      "v1": 1.0,
+      "v2": 1.0,
+      "delta": 0.0
+    },
+    "refusal_recall": {
+      "v1": 1.0,
+      "v2": 1.0,
+      "delta": 0.0
+    },
+    "refusal_precision": {
+      "v1": 0.625,
+      "v2": 0.556,
+      "delta": -0.069
+    },
+    "p95_latency_ms": {
+      "v1": 4658.0,
+      "v2": 5261.3,
+      "delta": 603.3
+    },
+    "cost_per_query_usd": {
+      "v1": 0.0101,
+      "v2": 0.0111,
+      "delta": 0.001
+    }
+  },
+  "regression_check": {
+    "n_recoveries": 3,
+    "recoveries": [
+      {
+        "id": "Q19",
+        "kind": "multi_hop",
+        "from": 1,
+        "to": 2
+      },
+      {
+        "id": "Q23",
+        "kind": "multi_hop",
+        "from": 0,
+        "to": 1
+      },
+      {
+        "id": "Q35",
+        "kind": "aggregation",
+        "from": 0,
+        "to": 1
+      }
+    ],
+    "n_regressions": 3,
+    "regressions": [
+      {
+        "id": "Q24",
+        "kind": "multi_hop",
+        "from": 2,
+        "to": 1
+      },
+      {
+        "id": "Q25",
+        "kind": "multi_hop",
+        "from": 2,
+        "to": 1
+      },
+      {
+        "id": "Q42",
+        "kind": "paraphrase",
+        "from": 2,
+        "to": 1
+      }
+    ],
+    "n_unchanged_imperfect": 11
+  },
+  "reclassification": {
+    "remaining_failures_count": 16,
+    "tally": {
+      "generation": 15,
+      "ranking": 1
+    },
+    "details": [
+      {
+        "id": "Q04",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q05",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q10",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q11",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q20",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q21",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q23",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q24",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q25",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q26",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q29",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q32",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q35",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q37",
+        "mode": 4,
+        "mode_name": "ranking",
+        "evidence": "gold doc(s) ['exclusions', 'plans-overview'] in top 30, but ranked outside top 5 (ranking error)"
+      },
+      {
+        "id": "Q42",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 1/2 (generation omission/reasoning)"
+      },
+      {
+        "id": "Q44",
+        "mode": 6,
+        "mode_name": "generation",
+        "evidence": "primary gold doc(s) retrieved in top 5, but generator produced score 0/2 (generation omission/reasoning)"
+      }
+    ]
+  }
+}
