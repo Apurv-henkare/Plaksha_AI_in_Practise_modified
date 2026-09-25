@@ -4,7 +4,7 @@
 
 ---
 
-## Part B — The Grid Table
+## the grid table
 
 > **Note on MAIN-tier results:** All three MAIN-tier variants (`zero_shot_main`, `few_shot_main`, `few_shot_reasoned_main`) completed with 0 API calls and 0 cost. The harness hit the `$0.60` budget guard after the SMALL-tier runs, and the `run_eval` call for each MAIN variant was aborted before it issued any real requests. Their `field_accuracy = 0.604` comes from default fallback outputs, not from actual model responses. The MAIN columns are reported for completeness but are **not interpretable as model performance**. The budget should be raised to `$2.00+` to run MAIN tier properly.
 
@@ -62,7 +62,7 @@ Among SMALL-tier results: `few_shot_reasoned` is dominated by `zero_shot` — sa
 
 ---
 
-## Part A — Few-shot Selection Justification
+## the few-shot selection justification, and your answer to A4
 
 ### A1. The six chosen examples and why
 
@@ -83,7 +83,7 @@ The six examples were picked from the dev set, and performance is measured on th
 
 ---
 
-## Part C — The Cascade
+## the cascade numbers (escalation rate, blended cost, blended accuracy)
 
 ### Implementation
 
@@ -116,7 +116,7 @@ The second sample is drawn at **T=0.7** (not T=0) to avoid the cache-serving bug
 
 ---
 
-## Part D — Is Your Difference Real?
+## the paired-test result with b, c, and p
 
 ### D1. 95% CI (Wilson, n=60)
 
@@ -134,7 +134,7 @@ At n=60, Wilson half-width ≈ 0.11 for p≈0.25. All four SMALL-tier configurat
 
 ---
 
-## Part E — Error Analysis and Recommendation
+## three error clusters, and the confusion matrix from E2
 
 ### E1. Top three error clusters (zero_shot, 46 failures of 60)
 
@@ -173,7 +173,9 @@ policy_change                                   2            6           3
 technical                                                    4           4
 ```
 
-### E3. Recommendation
+---
+
+## the recommendation paragraph
 
 **Ship `zero_shot` (SMALL tier, gemini-3.5-flash-lite).**
 
@@ -181,7 +183,7 @@ On 60 dev cases it achieves field_accuracy 0.750, record_accuracy 0.233 (95% CI 
 
 ---
 
-## Negative Results
+## at least one negative result
 
 **1. Few-shot bought nothing.**  
 The zero-shot prompt already encodes classification rules via Pydantic field descriptions. Adding 6 carefully chosen edge-case examples moved `record_accuracy` from 0.233 to 0.267 (paired p=0.727) — indistinguishable from noise. This replicates the reference solution's finding: when the zero-shot prompt is already well-specified, in-context examples have nothing left to teach.

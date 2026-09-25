@@ -6,7 +6,7 @@
 
 ---
 
-## 1. Part A — Failure Characterisation of Naive LLM Calls (v0)
+## the Part A failure table
 
 In Part A, we evaluated `v0_naive.py` on $N=40$ tickets using an unconstrained prompt asking the model to output a raw JSON dictionary without JSON-schema enforcement or repair loops.
 
@@ -40,7 +40,7 @@ Two rows in the table do not map cleanly to the nine cognitive failure modes in 
 
 ---
 
-## 2. Structural Evolution & Boundary Design (Part B & C)
+## Structural Evolution & Boundary Design (Part B & C)
 
 ### 2.1 Schema Design & Evidence Placement (Part B)
 - **Schema Constraints**: Implemented `TicketRecord` with strict `Literal` types for `category`, `sentiment`, `product`, and `language`. `urgency` was bounded to `1..5` with explicit anchor definitions in field descriptions. `policy_number` was bounded with regex `r"^AUR-\d{7}$"`.
@@ -57,7 +57,7 @@ Three fields were identified as deterministic or business-rule driven and remove
 
 ---
 
-## 3. Evaluation & Variant Comparison
+## the variant comparison table (v0 / B / C) with quality, cost, p95
 
 All variants were evaluated using `run_eval.py`. The official test split was run **exactly once** and persisted to `reports/lab1_test.json`.
 
@@ -77,7 +77,7 @@ All variants were evaluated using `run_eval.py`. The official test split was run
 
 ---
 
-## 4. Test Split Per-Field Accuracy & Category Confusion Matrix
+## per-field accuracy and the category confusion matrix
 
 ### 4.1 Per-Field Accuracy Breakdown (Official Test Split, $N=120$)
 
@@ -111,7 +111,7 @@ technical                    .              .              1              8     
 
 ---
 
-## 5. Error Analysis: Top Three Failure Clusters
+## top three error clusters with proposed fixes
 
 Audit of 15 failing test cases (`T0049`, `T0047`, `T0208`, `T0009`, `T0177`, `T0109`, `T0088`, `T0144`, `T0093`, `T0232`, `T0202`, `T0129`, `T0180`, `T0178`, `T0050`) reveals three dominant error clusters:
 
@@ -132,7 +132,7 @@ Audit of 15 failing test cases (`T0049`, `T0047`, `T0208`, `T0009`, `T0177`, `T0
 
 ---
 
-## 6. Economic Analysis & Business Case (D5)
+## the D5 economic argument
 
 ### Operational Parameters
 - **Daily Volume**: 10,000 tickets/day $\rightarrow$ **3,650,000 tickets/year**.
@@ -156,7 +156,7 @@ Because the cost of automated extraction ($\approx ₹0.027$) is less than $1\%$
 
 ---
 
-## 7. Honest Negative Result
+## one thing you tried that did not work, and your explanation of why
 
 ### What We Tried
 We initially attempted to improve `policy_number` recall by falling back to search quoted email threads (`>`) whenever no policy number was found in the live ticket body.

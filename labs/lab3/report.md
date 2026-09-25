@@ -307,4 +307,3 @@ The corpus contains active policy documents alongside an outdated file: `claims-
   2. **Concurrency & Rate Limits:** Firing 30 parallel LLM requests per user query means 50 concurrent users would trigger 1,500 simultaneous API calls, instantly exhausting LLM rate limits (TPM/RPM) and inducing HTTP 429 errors.
   3. **User Experience Latency Budget:** Even 1.5 seconds exceeds the recommended 200–400 ms interactive latency budget for live search inputs, whereas Dense runs in 1.41 ms.
   4. **Domain Reliability:** As demonstrated by Question Q32, rerankers can suffer from domain mismatch or prompt misinterpretations on structured policy exclusions, introducing nondeterministic variance into the retrieval pipeline.
-
